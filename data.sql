@@ -106,3 +106,35 @@ INSERT INTO owners (
 
 INSERT INTO species (name) VALUES ('Pokemon');
 INSERT INTO species (name) VALUES ('Digimon');
+
+/* UPDATE ESPECIES ID */
+
+UPDATE animals
+	SET species_id=(SELECT id from species WHERE name = 'Digimon')
+	WHERE name LIKE '%mon';
+
+UPDATE animals
+	SET species_id=(SELECT id from species WHERE name = 'Pokemon')
+	WHERE name NOT LIKE '%mon'; 
+
+/* UPDATE OWNER ID */
+
+UPDATE animals
+	SET owner_id=1
+	WHERE name = 'Agumon';
+
+UPDATE animals
+	SET owner_id=2
+	WHERE name IN ('Gabumon', 'Pikachu');
+
+UPDATE animals
+	SET owner_id=3
+	WHERE name IN ('Devimon', 'Plantmon');
+
+UPDATE animals
+	SET owner_id=4
+	WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
+
+UPDATE animals
+	SET owner_id=5
+	WHERE name IN ('Angemon', 'Boarmon');
