@@ -157,10 +157,11 @@ SELECT
 
 /* List all owners and their animals, remember to include those that don't own any animal. */
 
-SELECT
-	o.full_name, a.name
+SELECT 
+	o.full_name, STRING_AGG (a.name, ', ') as animals
     FROM owners o
-    LEFT JOIN animals a ON o.id = a.owner_id;
+    LEFT JOIN animals a ON o.id = a.owner_id
+    GROUP BY o.full_name;    
 
 /* How many animals are there per species? */
 
