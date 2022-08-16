@@ -306,3 +306,17 @@ INSERT INTO visits (
 ) SELECT a.id, v.id, '2021-01-11'
     FROM animals a
     INNER JOIN vets v ON v.name = 'William Tatcher' AND a.name = 'Blossom';
+
+/* Database performance audit */
+
+BEGIN;
+
+INSERT INTO visits (animal_id, vet_id, visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+INSERT INTO owners (full_name, email) SELECT 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+CREATE INDEX visits_animals_id_asc ON visits(animal_id ASC);
+
+DROP INDEX visits_animals_id_asc;
+
+CREATE INDEX visits_vets_asc ON visits(vet_id ASC);
