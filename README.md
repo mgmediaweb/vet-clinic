@@ -78,6 +78,13 @@ SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 - Twitter: [@GonzoMedinaDev](https://twitter.com/GonzoMedinaDev)
 - LinkedIn: [gonzalo-medina-g](https://www.linkedin.com/in/gonzalo-medina-g/)
 
+👤 **Oyelakin Ridwan Adio**
+
+**Oyelakin Ridwan Adio**
+- GitHub: [@oyelakin](https://github.com/oyelakinG9)
+- Twitter: [@oyelakin](https://twitter.com/OyelakinG1)
+- LinkedIn: [@oyelakin](https://www.linkedin.com/in/oyelakin-ridwan-4b4a02b6/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
