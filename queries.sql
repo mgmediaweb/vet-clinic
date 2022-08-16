@@ -264,3 +264,8 @@ SELECT
     GROUP BY s.name
     ORDER BY COUNT(v.*) DESC
     LIMIT 1;
+
+    /* performance audit */
+
+    EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+    
